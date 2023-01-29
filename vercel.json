@@ -1,0 +1,17 @@
+{
+  "builds": [
+    {
+      "src": "src/db.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/db.js"
+    },
+    {
+      "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+    }
+  ]
+}
